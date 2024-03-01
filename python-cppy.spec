@@ -13,6 +13,7 @@ URL:              https://pypi.org/project/cppy/
 Source0:	https://files.pythonhosted.org/packages/c5/7e/6cc5acd93752ee52d2f0423046072a2ce3ae16dfcd44373b9fe2a0222204/%{pypi_name}-%{version}.tar.gz
 BuildRequires:	pkgconfig(python3)
 BuildRequires:	python3egg(setuptools)
+BuildRequires:	python3dist(setuptools-scm)
 
 %description
 A small C++ header library which makes it easier to write Python
@@ -24,7 +25,7 @@ performing common object operations.
 %prep
 %autosetup -p1 -n %{pypi_name}-%{version}
 # Remove bundled egg-info
-rm -rf %{pypi_name}.egg-info
+#rm -rf %{pypi_name}.egg-info
 
 %build
 %py3_build
