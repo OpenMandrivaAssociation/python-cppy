@@ -3,7 +3,7 @@
 
 Name:             python-cppy
 Version:          1.3.1
-Release:          1
+Release:          2
 
 Summary:          A Cassowary constraint solving algorithm
 License:          BSD
@@ -22,6 +22,10 @@ extension modules.
 The primary feature is a PyObject smart pointer which automatically
 handles reference counting and provides convenience methods for
 performing common object operations.
+
+%build -p
+# The sdist is not a git checkout, so the versioning backend needs the version.
+export SETUPTOOLS_SCM_PRETEND_VERSION=%{version}
 
 %files
 %doc README.rst
